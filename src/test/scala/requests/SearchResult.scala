@@ -10,7 +10,7 @@ import scala.util.Random
 object SearchResult {
 
 
-  val clickFirstSearchResult: ChainBuilder = exec(http("Click Search Result")
+  val clickFirstSearchResult: ChainBuilder = exec(http("Click first search result")
     .get("${links(1)}")
     .headers(Headers.headers_1)
     .check(
@@ -18,7 +18,7 @@ object SearchResult {
     )
   )
 
-  val clickRandomSearchResult: ChainBuilder = exec(http("Click Search Result")
+  val clickRandomSearchResult: ChainBuilder = exec(http("Click random search result")
     .get("${links.random()}")
     .headers(Headers.headers_1)
     .check(

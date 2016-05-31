@@ -8,11 +8,13 @@ import io.gatling.http.request.builder.HttpRequestBuilder
 
 object LoadHomePage {
 
-  val loadHomePage: ChainBuilder = exec(http("Load Home Page")
+  val loadHomePage: ChainBuilder = exec(
+    http("Load Home Page")
     .get("/")
     .headers(Headers.headers_1)
     .check(status.is(200))
   )
+    .pause(2, 10)
 
 
 }

@@ -1,14 +1,19 @@
 package scenarios
 
 import io.gatling.core.Predef._
-import requests.{SearchResult, LoadHomePage, LoadSearchPage}
+import io.gatling.core.structure.ScenarioBuilder
+import requests.{LoadHomePage, LoadSearchPage, SearchResult}
 
 
 object HomepageUsers {
 
-  val searchFromHomepage = scenario("User searches from homepage")
+  val searchFromHomepage: ScenarioBuilder = scenario("User searches from homepage")
     .exec(LoadHomePage.loadHomePage)
-    .exec(LoadSearchPage.search)
+    .exec(LoadSearchPage.searchForRandomValues)
     .exec(SearchResult.clickRandomSearchResult)
 
 }
+
+
+
+
